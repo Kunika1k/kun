@@ -1,0 +1,47 @@
+import serial
+
+# Assuming your 3D printer is connected to the COM port "COM3"
+printer_serial = serial.Serial('COM3', 9600)
+
+# Sending G-code commands to the printer
+# Example: Printing the word "HELLO" in font "Arial" with a font size of 20
+gcode_commands = [
+    'G28',                         # Home all axes
+    'G1 Z15.0 F9000',               # Move the platform down 15mm
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E3',                   # Extrude 3mm of filament
+    'G92 E0',                       # Reset extruder distance again
+    'G1 X100 Y100 F200',            # Move to the start of the text
+    'G28 X0',                       # Home X-axis
+    'G1 X100 Y100 F200',            # Move to the start of the text again
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E2',                   # Extrude 2mm of filament
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E3',                   # Extrude 3mm of filament
+    'G1 X110 Y100',                 # Move to the next character of the text
+    'G4 P100',                      # Wait for the printer to finish moving
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E2',                   # Extrude 2mm of filament
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E3',                   # Extrude 3mm of filament
+    'G1 X120 Y100',                 # Move to the next character of the text
+    'G4 P100',                      # Wait for the printer to finish moving
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E2',                   # Extrude 2mm of filament
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E3',                   # Extrude 3mm of filament
+    'G1 X130 Y100',                 # Move to the next character of the text
+    'G4 P100',                      # Wait for the printer to finish moving
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E2',                   # Extrude 2mm of filament
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E3',                   # Extrude 3mm of filament
+    'G1 X140 Y100',                 # Move to the next character of the text
+    'G4 P100',                      # Wait for the printer to finish moving
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E2',                   # Extrude 2mm of filament
+    'G92 E0',                       # Reset extruder distance
+    'G1 F200 E3',                   # Extrude 3mm of filament
+    'G1 X150 Y100',                 # Move to the next character of the text
+    'G4 P100',                      # Wait for the printer to finish moving
+    'G92 E0',                       #
